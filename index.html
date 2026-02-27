@@ -3,143 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shehry — Portfolio</title>
-
-  <!-- Google Fonts: Caveat (handwritten) + Poppins (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
+  <title>Shehry — Cybersecurity Engineer</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Orbitron (futuristic display) + Share Tech Mono (mono body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&family=Share+Tech+Mono&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ===================== NAVBAR ===================== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">Shehry<span class="logo-dot">.</span></a>
-
-      <!-- Hamburger button (mobile) -->
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home"     class="nav-link">Home</a></li>
-        <li><a href="#about"    class="nav-link">About</a></li>
-        <li><a href="#skills"   class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#learning" class="nav-link">Learning</a></li>
-        <li><a href="#contact"  class="nav-link">Contact</a></li>
-      </ul>
-    </div>
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-logo">SH<span class="accent">:</span>//</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <!-- Mobile hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <!-- ===================== HERO SECTION ===================== -->
-  <section class="hero" id="home">
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
 
-    <!-- Decorative doodle elements -->
-    <div class="doodle doodle-circle-1"></div>
-    <div class="doodle doodle-circle-2"></div>
-    <div class="doodle doodle-dots"></div>
-    <div class="doodle doodle-wavy"></div>
-    <svg class="doodle doodle-squiggle" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 20 Q25 5 50 20 Q75 35 100 20 Q125 5 150 20 Q175 35 200 20" stroke="#5B8DEF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.35"/>
-    </svg>
+  <!-- ============================================================
+       HERO — THREE.JS CANVAS
+  ============================================================ -->
+  <section id="hero">
+    <!-- Three.js renders into this canvas -->
+    <canvas id="heroCanvas"></canvas>
 
-    <div class="hero-content">
-      <div class="hero-text fade-in">
-        <p class="hero-greeting">Hello there 👋</p>
-        <h1 class="hero-heading">Hi, I'm <span class="accent-name">Shehry</span></h1>
-        <p class="hero-subtitle">Computer Science Student |
-          <span class="typing-wrapper">
-            <span id="typing-text" class="typing-text"></span><span class="cursor">|</span>
-          </span>
-        </p>
-        <p class="hero-description">
-          I am a Computer Science student passionate about Cybersecurity, Linux, and
-          Low-Level Computing. I enjoy building secure systems and understanding how
-          computers work internally.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact"  class="btn btn-outline">Contact Me</a>
-        </div>
-      </div>
+    <!-- Centered text overlay -->
+    <div class="hero-text" id="heroText">
+      <div class="hero-tag">[ CYBER WORLD v2.0 ]</div>
+      <h1 class="hero-name">Shehry</h1>
+      <p class="hero-subtitle">Cybersecurity Student<br><span class="accent-text">Low-Level Computing Enthusiast</span></p>
+      <a href="#about" class="hero-cta">Enter World <span class="cta-arrow">↓</span></a>
+    </div>
 
-      <!-- Profile illustration placeholder -->
-      <div class="hero-image fade-in fade-delay">
-        <div class="profile-circle">
-          <div class="profile-inner">
-            <svg viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg" class="avatar-svg">
-              <!-- Simple human silhouette doodle -->
-              <circle cx="60" cy="45" r="28" fill="#D6E6FF" stroke="#5B8DEF" stroke-width="2.5" stroke-dasharray="5 3"/>
-              <path d="M20 125 Q30 90 60 85 Q90 90 100 125" fill="#D6E6FF" stroke="#5B8DEF" stroke-width="2.5" stroke-dasharray="5 3"/>
-              <text x="60" y="52" text-anchor="middle" font-size="26" fill="#5B8DEF">:)</text>
-            </svg>
-          </div>
-        </div>
-        <!-- Small floating badge -->
-        <div class="floating-badge">
-          <span>💻</span> CS Student
-        </div>
-      </div>
+    <!-- Scroll hint -->
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
     </div>
   </section>
 
-  <!-- ===================== WAVE SEPARATOR ===================== -->
-  <div class="section-wave wave-1">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 30 Q180 0 360 30 Q540 60 720 30 Q900 0 1080 30 Q1260 60 1440 30 L1440 60 L0 60Z" fill="#EEF4FF"/>
-    </svg>
-  </div>
-
-  <!-- ===================== ABOUT SECTION ===================== -->
-  <section class="about section-pad" id="about">
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section id="about" class="section">
     <div class="container">
-      <h2 class="section-heading fade-in">About Me <span class="heading-squiggle">~</span></h2>
-
+      <div class="section-label">01 / ABOUT</div>
+      <h2 class="section-title fade-in">About Me</h2>
       <div class="about-grid">
-        <!-- Avatar card -->
-        <div class="about-avatar-card fade-in">
-          <div class="about-avatar">
-            <svg viewBox="0 0 120 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="60" cy="45" r="28" fill="#FFE8D6" stroke="#FF9F43" stroke-width="2.5" stroke-dasharray="5 3"/>
-              <path d="M20 125 Q30 90 60 85 Q90 90 100 125" fill="#FFE8D6" stroke="#FF9F43" stroke-width="2.5" stroke-dasharray="5 3"/>
-              <text x="60" y="52" text-anchor="middle" font-size="26" fill="#FF9F43">:)</text>
-            </svg>
-          </div>
-          <div class="about-badge-row">
-            <span class="mini-badge">🔐 Security</span>
-            <span class="mini-badge">🐧 Linux</span>
-            <span class="mini-badge">⚙️ Low-Level</span>
-          </div>
+        <div class="about-text fade-in">
+          <p>I am a cybersecurity student interested in the deeper layers of computing — how systems work beneath the surface, how they can be protected, and how vulnerabilities emerge.</p>
+          <p>My focus areas include:</p>
+          <ul class="interest-list">
+            <li><span class="bullet">▸</span> Ethical hacking</li>
+            <li><span class="bullet">▸</span> Operating systems</li>
+            <li><span class="bullet">▸</span> Linux internals</li>
+            <li><span class="bullet">▸</span> Networking fundamentals</li>
+            <li><span class="bullet">▸</span> Low-level programming</li>
+          </ul>
         </div>
-
-        <!-- Text card -->
-        <div class="about-text-card fade-in fade-delay">
-          <p>
-            I am a Computer Science student interested in <strong>Cybersecurity</strong> and
-            <strong>Low-Level Computing</strong>. I enjoy learning how operating systems work
-            and how computers run internally.
-          </p>
-          <p>
-            I am currently learning <em>Linux, Networking, and Web Security</em> while
-            building practical projects to sharpen my skills and understand the real world
-            of computing.
-          </p>
-          <div class="about-stats">
-            <div class="stat-item">
-              <span class="stat-number">3+</span>
-              <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">4+</span>
-              <span class="stat-label">Technologies</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">∞</span>
-              <span class="stat-label">Curiosity</span>
+        <!-- Decorative animated panel -->
+        <div class="about-visual fade-in">
+          <div class="cyber-panel">
+            <div class="panel-line" style="--d:0s"></div>
+            <div class="panel-line" style="--d:.3s"></div>
+            <div class="panel-line" style="--d:.6s"></div>
+            <div class="panel-content">
+              <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Learning</span></div>
+              <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Projects Built</span></div>
+              <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Curiosity</span></div>
             </div>
           </div>
         </div>
@@ -147,246 +95,165 @@
     </div>
   </section>
 
-  <!-- ===================== WAVY SEPARATOR ===================== -->
-  <div class="section-wave wave-2">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 30 Q180 60 360 30 Q540 0 720 30 Q900 60 1080 30 Q1260 0 1440 30 L1440 0 L0 0Z" fill="#EEF4FF"/>
-    </svg>
-  </div>
-
-  <!-- ===================== SKILLS SECTION ===================== -->
-  <section class="skills section-pad" id="skills">
+  <!-- ============================================================
+       SKILLS SECTION
+  ============================================================ -->
+  <section id="skills" class="section">
     <div class="container">
-      <h2 class="section-heading fade-in">Skills <span class="heading-squiggle">~</span></h2>
-
-      <div class="skills-grid">
-
-        <!-- Programming -->
-        <div class="skill-card fade-in">
-          <div class="skill-card-icon">🖥️</div>
-          <h3 class="skill-card-title">Programming</h3>
-          <ul class="skill-list">
-            <li><span class="skill-tag">HTML</span></li>
-            <li><span class="skill-tag">CSS</span></li>
-            <li><span class="skill-tag">JavaScript</span></li>
-            <li><span class="skill-tag">MySQL</span></li>
-          </ul>
+      <div class="section-label">02 / SKILLS</div>
+      <h2 class="section-title fade-in">Skills</h2>
+      <div class="skills-grid fade-in">
+        <!-- Each card floats and glows on hover -->
+        <div class="skill-card" style="--hue:180deg">
+          <div class="skill-icon">🛡</div>
+          <div class="skill-name">Cybersecurity</div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
         </div>
-
-        <!-- Cybersecurity -->
-        <div class="skill-card fade-in fade-delay">
-          <div class="skill-card-icon">🔐</div>
-          <h3 class="skill-card-title">Cybersecurity</h3>
-          <ul class="skill-list">
-            <li><span class="skill-tag skill-tag-orange">Linux</span></li>
-            <li><span class="skill-tag skill-tag-orange">Networking Basics</span></li>
-            <li><span class="skill-tag skill-tag-orange">Web Security Basics</span></li>
-          </ul>
+        <div class="skill-card" style="--hue:200deg">
+          <div class="skill-icon">🐧</div>
+          <div class="skill-name">Linux</div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
         </div>
-
-        <!-- Low-Level Computing -->
-        <div class="skill-card fade-in fade-delay-2">
-          <div class="skill-card-icon">⚙️</div>
-          <h3 class="skill-card-title">Low-Level Computing</h3>
-          <ul class="skill-list">
-            <li><span class="skill-tag skill-tag-green">Computer Architecture</span></li>
-            <li><span class="skill-tag skill-tag-green">OS Basics</span></li>
-            <li><span class="skill-tag skill-tag-green">Memory Concepts</span></li>
-            <li><span class="skill-tag skill-tag-green">Processes &amp; Threads</span></li>
-          </ul>
+        <div class="skill-card" style="--hue:220deg">
+          <div class="skill-icon">🌐</div>
+          <div class="skill-name">Networking</div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
         </div>
-
-        <!-- Tools -->
-        <div class="skill-card fade-in fade-delay-3">
-          <div class="skill-card-icon">🛠️</div>
-          <h3 class="skill-card-title">Tools</h3>
-          <ul class="skill-list">
-            <li><span class="skill-tag skill-tag-purple">GitHub</span></li>
-            <li><span class="skill-tag skill-tag-purple">VS Code</span></li>
-            <li><span class="skill-tag skill-tag-purple">Linux</span></li>
-            <li><span class="skill-tag skill-tag-purple">XAMPP</span></li>
-          </ul>
+        <div class="skill-card" style="--hue:270deg">
+          <div class="skill-icon">⚙️</div>
+          <div class="skill-name">Low-Level Computing</div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
         </div>
-
+        <div class="skill-card" style="--hue:190deg">
+          <div class="skill-icon">🎨</div>
+          <div class="skill-name">HTML / CSS</div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+        </div>
+        <div class="skill-card" style="--hue:210deg">
+          <div class="skill-icon">⚡</div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PROJECTS SECTION ===================== -->
-  <section class="projects section-pad" id="projects">
-    <div class="doodle doodle-dots-2"></div>
+  <!-- ============================================================
+       PROJECTS SECTION
+  ============================================================ -->
+  <section id="projects" class="section">
     <div class="container">
-      <h2 class="section-heading fade-in">Projects <span class="heading-squiggle">~</span></h2>
-      <p class="section-sub fade-in">A collection of things I've built so far.</p>
-
-      <div class="projects-grid">
+      <div class="section-label">03 / PROJECTS</div>
+      <h2 class="section-title fade-in">Projects</h2>
+      <div class="projects-grid fade-in">
 
         <!-- Project 1 -->
-        <div class="project-card fade-in">
-          <div class="project-card-top">
-            <span class="project-icon">🍽️</span>
-            <span class="project-badge">HTML / CSS</span>
+        <article class="project-card">
+          <div class="project-glow"></div>
+          <div class="project-number">01</div>
+          <h3 class="project-title">Mini Operating System</h3>
+          <p class="project-desc">Built a mini operating system to understand low-level computing and OS internals.</p>
+          <ul class="project-tags">
+            <li>Bootloader basics</li>
+            <li>Kernel basics</li>
+            <li>Memory basics</li>
+          </ul>
+          <div class="project-footer">
+            <span class="project-stack">C / Assembly / QEMU</span>
           </div>
-          <h3 class="project-title">Recipe Website</h3>
-          <p class="project-desc">Responsive recipe website built using HTML and CSS with a clean, user-friendly layout showcasing various dishes.</p>
-          <div class="project-tech">
-            <span>HTML</span><span>CSS</span>
-          </div>
-          <a href="#" class="btn btn-project">View Project →</a>
-        </div>
+        </article>
 
         <!-- Project 2 -->
-        <div class="project-card fade-in fade-delay">
-          <div class="project-card-top">
-            <span class="project-icon">🗄️</span>
-            <span class="project-badge project-badge-orange">MySQL</span>
+        <article class="project-card featured">
+          <div class="project-glow"></div>
+          <div class="project-number">02</div>
+          <h3 class="project-title">Portfolio Website</h3>
+          <p class="project-desc">Designed and built my personal portfolio website — this very cyber world you're exploring right now.</p>
+          <ul class="project-tags">
+            <li>Three.js 3D</li>
+            <li>Scroll animations</li>
+            <li>Responsive design</li>
+          </ul>
+          <div class="project-footer">
+            <span class="project-stack">HTML / CSS / JS</span>
           </div>
-          <h3 class="project-title">Student Database System</h3>
-          <p class="project-desc">Database project designed using MySQL to manage student records with structured queries and relational tables.</p>
-          <div class="project-tech">
-            <span>MySQL</span>
-          </div>
-          <a href="#" class="btn btn-project">View Project →</a>
-        </div>
+        </article>
 
         <!-- Project 3 -->
-        <div class="project-card fade-in fade-delay-2">
-          <div class="project-card-top">
-            <span class="project-icon">🧠</span>
-            <span class="project-badge project-badge-green">Low-Level</span>
+        <article class="project-card">
+          <div class="project-glow"></div>
+          <div class="project-number">03</div>
+          <h3 class="project-title">Website Security Testing</h3>
+          <p class="project-desc">Tested vulnerabilities in static websites — exploring how everyday web properties can be compromised.</p>
+          <ul class="project-tags">
+            <li>XSS testing</li>
+            <li>Header analysis</li>
+            <li>Recon techniques</li>
+          </ul>
+          <div class="project-footer">
+            <span class="project-stack">Burp Suite / Linux</span>
           </div>
-          <h3 class="project-title">Mini Operating System</h3>
-          <p class="project-desc">Small experimental OS project built to understand low-level computing concepts like memory management and processes.</p>
-          <div class="project-tech">
-            <span>C</span><span>Assembly</span>
-          </div>
-          <a href="#" class="btn btn-project">View Project →</a>
-        </div>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ===================== LEARNING SECTION ===================== -->
-  <section class="learning section-pad" id="learning">
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section id="contact" class="section">
     <div class="container">
-      <h2 class="section-heading fade-in">Currently Learning <span class="heading-squiggle">~</span></h2>
-      <p class="section-sub fade-in">Always growing, always curious.</p>
+      <div class="section-label">04 / CONTACT</div>
+      <h2 class="section-title fade-in">Contact</h2>
+      <div class="contact-wrapper fade-in">
+        <p class="contact-intro">Want to connect? Send a message and I'll respond shortly.</p>
 
-      <div class="learning-grid fade-in">
-        <div class="learning-item">
-          <span class="learning-icon">🐧</span>
-          <span class="learning-label">Linux</span>
-          <div class="learning-bar"><div class="learning-fill" style="width:65%"></div></div>
-        </div>
-        <div class="learning-item">
-          <span class="learning-icon">🌐</span>
-          <span class="learning-label">Networking</span>
-          <div class="learning-bar"><div class="learning-fill" style="width:50%"></div></div>
-        </div>
-        <div class="learning-item">
-          <span class="learning-icon">🔐</span>
-          <span class="learning-label">Cybersecurity</span>
-          <div class="learning-bar"><div class="learning-fill" style="width:45%"></div></div>
-        </div>
-        <div class="learning-item">
-          <span class="learning-icon">🕸️</span>
-          <span class="learning-label">Web Security</span>
-          <div class="learning-bar"><div class="learning-fill" style="width:40%"></div></div>
-        </div>
-        <div class="learning-item">
-          <span class="learning-icon">⚙️</span>
-          <span class="learning-label">Low-Level Computing</span>
-          <div class="learning-bar"><div class="learning-fill" style="width:55%"></div></div>
-        </div>
-        <div class="learning-item">
-          <span class="learning-icon">💾</span>
-          <span class="learning-label">Operating Systems</span>
-          <div class="learning-bar"><div class="learning-fill" style="width:48%"></div></div>
+        <!-- Formspree form -->
+        <form id="contactForm" action="https://formspree.io/f/mlgwoljr" method="POST" class="cyber-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-icon">→</span>
+          </button>
+        </form>
+
+        <!-- Success message (hidden until submit) -->
+        <div id="formSuccess" class="form-success" hidden>
+          <div class="success-icon">✓</div>
+          <p>Message sent successfully. I'll get back to you soon.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== CONTACT SECTION ===================== -->
-  <section class="contact section-pad" id="contact">
-  <div class="doodle doodle-circle-3"></div>
-  <div class="container">
-    <h2 class="section-heading fade-in">Contact Me <span class="heading-squiggle">~</span></h2>
-    <p class="section-sub fade-in">Have a project in mind? Let's talk!</p>
-
-    <form 
-      class="contact-form fade-in" 
-      id="contactForm"
-      action="https://formspree.io/f/mlgwoljr"
-      method="POST"
-    >
-      <input type="hidden" name="_subject" value="New Portfolio Message">
-
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="e.g. Ali Hassan" required />
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required />
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Hey Shehry, I wanted to say..." required></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary btn-full">Send Message ✉️</button>
-      <div class="form-success" id="formSuccess" style="display: none;">
-        Thanks! I'll get back to you soon 🎉
-      </div>
-    </form>
-  </div>
-</section>
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const data = new FormData(form);
-
-    fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            document.getElementById("formSuccess").style.display = "block";
-            form.reset();
-        } else {
-            alert("Oops! There was a problem sending your message.");
-        }
-    }).catch(() => {
-        alert("Oops! There was a problem sending your message.");
-    });
-});
-</script>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
-    <div class="footer-wave">
-      <svg viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 25 Q360 0 720 25 Q1080 50 1440 25 L1440 50 L0 50Z" fill="#2C2C3E"/>
-      </svg>
-    </div>
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer">
     <div class="footer-inner">
-      <p class="footer-logo">Shehry<span>.</span></p>
-      <p class="footer-copy">© 2026 Shehry Portfolio — Crafted with ☕ &amp; curiosity</p>
-      <div class="footer-links">
-        <a href="#" class="footer-link">GitHub</a>
-        <a href="mailto:shehry@example.com" class="footer-link">Email</a>
-      </div>
+      <span class="footer-logo">SH<span class="accent">:</span>//</span>
+      <span class="footer-copy">© 2025 Shehry — Cyber World Portfolio</span>
+      <span class="footer-status"><span class="status-dot"></span> Online</span>
     </div>
   </footer>
 
+  <!-- ============================================================
+       SCRIPTS
+       Three.js from CDN, then our own script.js
+  ============================================================ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
